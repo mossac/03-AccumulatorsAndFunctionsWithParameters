@@ -5,18 +5,31 @@ This module lets you practice  ** using objects **, including:
   -- accessing their DATA via INSTANCE VARIABLES
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
-         Aaron Wilkin, their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Aaron Wilkin, their colleagues, and Aidan Moss.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 
 def main():
+    ##two_circles()
+    ##circle_and_rectangle()
+    lines()
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
 
 
 def two_circles():
+    window = rg.RoseWindow(400,400)
+    x = rg.Point(300,300)
+    y =rg.Point(100,100)
+    circleone = rg.Circle(x,30)
+    circletwo = rg.Circle(y,50)
+    circleone.fill_color = 'magenta'
+    circleone.attach_to(window)
+    circletwo.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws two rg.Circle objects on the window
@@ -27,7 +40,7 @@ def two_circles():
     -- Waits for the user to press the mouse, then closes the window.
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its green doc-string above.
+    # DONE: 2. Implement this function, per its green doc-string above.
     #    -- ANY two rg.Circle objects that meet the criteria are fine.
     #    -- File  COLORS.pdf  lists all legal color-names.
     # Put a statement in   main   to test this function
@@ -36,6 +49,30 @@ def two_circles():
 
 
 def circle_and_rectangle():
+    window = rg.RoseWindow(400, 400)
+    point = 300
+    thicc = 7
+    x = rg.Point(point, point)
+    y = rg.Point(100, 100)
+    z = rg.Point(200,200)
+    circle = rg.Circle(x, 30)
+    rectangle = rg.Rectangle(y,z)
+    circle.outline_thickness=thicc
+    circle.fill_color = 'blue'
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.render()
+    print(thicc)
+    print(2*point)
+    print('blue')
+    print('x = ', point)
+    print('y = ', point)
+    print('1')
+    print('none')
+    print('150,150')
+    print('x =150 ', point)
+    print('y =150', point)
+    window.close_on_mouse_click()
     """
     -- Constructs an rg.RoseWindow.
     -- Constructs and draws a rg.Circle and rg.Rectangle
@@ -67,7 +104,7 @@ def circle_and_rectangle():
            150.0
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its green doc-string above.
+    # DONE: 3. Implement this function, per its green doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -78,6 +115,26 @@ def circle_and_rectangle():
 
 
 def lines():
+    window = rg.RoseWindow(400, 400)
+    x = rg.Point(350, 350)
+    xy = rg.Point(225, 350)
+    y = rg.Point(100, 350)
+    z = rg.Point(50, 50)
+    w = rg.Point(250, 50)
+    zw = rg.Point(150, 50)
+    lineone = rg.Line(x, y)
+    linetwo = rg.Line(z, w)
+    linetwo.thickness=30
+    print(xy)
+    print('x = 225')
+    print('y = 350')
+    print(zw)
+    print('x = 150')
+    print('y = 50')
+    lineone.attach_to(window)
+    linetwo.attach_to(window)
+    window.render()
+    window.close_on_mouse_click()
     """
     -- Constructs a rg.RoseWindow.
     -- Constructs and draws on the window two rg.Lines such that:
@@ -99,7 +156,7 @@ def lines():
 
     -- Waits for the user to press the mouse, then closes the window.
     """
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
 
 
 # -----------------------------------------------------------------------------
